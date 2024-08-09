@@ -1,0 +1,24 @@
+import random
+
+def adivinhar_numero():
+    numero_secreto = random.randint(1, 1000)
+    tentativas = 0
+    print("Bem-vindo ao jogo de adivinhar numeros!")
+    print("Estou pensando em um numero entre 1 e 1000.")
+
+    while True:
+        try:
+            palpite = int(input("Digite seu palpite: "))
+            tentativas += 1
+
+            if palpite < numero_secreto:
+                print("Muito baixo! Tente novamente.")
+            elif palpite > numero_secreto:
+                print("Muito alto! Tente novamente.")
+            else:
+                print(f"Parabens! Voce adivinhou o numero em {tentativas} tentativas.")
+                break
+        except ValueError:
+            print("Por favor, digite um numero valido.")
+
+adivinhar_numero()
